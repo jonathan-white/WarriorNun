@@ -3,7 +3,7 @@
     <style name="NunButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/purple_500</item>
+        <item name="android:background">@drawable/border_rounded_shadow</item>
         <item name="android:layout_marginBottom">@dimen/standard_spacing</item>
     </style>
     <style name="NunName">
