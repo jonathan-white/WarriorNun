@@ -26,9 +26,9 @@ public class ScrollingActivity extends AppCompatActivity {
         String nun_header = intent.getStringExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_HEADER);
         String nun_summary = intent.getStringExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_SUMMARY);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(nun_title);
 
         int imageResource = getResources().getIdentifier(nun_header, null, getPackageName());
@@ -37,10 +37,10 @@ public class ScrollingActivity extends AppCompatActivity {
 
         int textResource = getResources().getIdentifier(nun_summary, null, getPackageName());
         String contentText = getResources().getString(textResource);
-        TextView content = (TextView) findViewById(R.id.scrollable_content);
+        TextView content = findViewById(R.id.scrollable_content);
         content.setText(contentText);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

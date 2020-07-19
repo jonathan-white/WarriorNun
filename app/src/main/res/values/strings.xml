@@ -71,4 +71,7 @@
     <string name="image_of_lilith">Image of Lilith</string>
     <string name="image_of_mary">Image of Mary</string>
     <string name="image_of_ava">Image of Ava</string>
+    <string name="send_email">Send Nun an Email</string>
+    <string name="image_of_nun">Image of Nun</string>
+    <string name="learn_more">Learn More</string>
 </resources>
