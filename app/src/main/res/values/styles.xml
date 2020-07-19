@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NunButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/purple_500</item>
+        <item name="android:layout_marginBottom">@dimen/standard_spacing</item>
+    </style>
+    <style name="NunName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+    </style>
+    <style name="NunImage">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+</resources>
