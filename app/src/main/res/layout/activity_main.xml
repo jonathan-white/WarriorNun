@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,7 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="@dimen/standard_spacing"
         android:textSize="32sp"
-        android:text="Which nun are you?" />
+        android:text="@string/which_nun_are_you" />
 
     <RelativeLayout
         android:id="@+id/nun_ava"
@@ -24,10 +23,11 @@
         <ImageView
             android:id="@+id/image_ava"
             android:src="@drawable/ava"
-            style="@style/NunImage"/>
+            style="@style/NunImage"
+            android:contentDescription="@string/image_of_ava" />
         <TextView
-            android:text="Ana"
-            android:layout_toRightOf="@id/image_ava"
+            android:text="@string/name_ava"
+            android:layout_toEndOf="@id/image_ava"
             style="@style/NunName" />
     </RelativeLayout>
 
@@ -38,10 +38,11 @@
         <ImageView
             android:id="@+id/image_shotgun_mary"
             android:src="@drawable/mary"
-            style="@style/NunImage" />
+            style="@style/NunImage"
+            android:contentDescription="@string/image_of_mary" />
         <TextView
-            android:text="Shotgun Mary"
-            android:layout_toRightOf="@id/image_shotgun_mary"
+            android:text="@string/name_mary"
+            android:layout_toEndOf="@id/image_shotgun_mary"
             style="@style/NunName"  />
     </RelativeLayout>
 
@@ -52,10 +53,11 @@
         <ImageView
             android:id="@+id/image_lilith"
             android:src="@drawable/lilith"
-            style="@style/NunImage" />
+            style="@style/NunImage"
+            android:contentDescription="@string/image_of_lilith" />
         <TextView
-            android:text="Lilith"
-            android:layout_toRightOf="@id/image_lilith"
+            android:text="@string/name_lilith"
+            android:layout_toEndOf="@id/image_lilith"
             style="@style/NunName" />
     </RelativeLayout>
 
@@ -66,10 +68,11 @@
         <ImageView
             android:id="@+id/image_beatrice"
             android:src="@drawable/beatrice"
-            style="@style/NunImage" />
+            style="@style/NunImage"
+            android:contentDescription="@string/image_of_beatrice" />
         <TextView
-            android:text="Beatrice"
-            android:layout_toRightOf="@id/image_beatrice"
+            android:text="@string/name_beatrice"
+            android:layout_toEndOf="@id/image_beatrice"
             style="@style/NunName" />
     </RelativeLayout>
 
@@ -80,10 +83,11 @@
         <ImageView
             android:id="@+id/image_camila"
             android:src="@drawable/camila"
-            style="@style/NunImage" />
+            style="@style/NunImage"
+            android:contentDescription="@string/image_of_camila" />
         <TextView
-            android:text="Camila"
-            android:layout_toRightOf="@id/image_camila"
+            android:text="@string/name_camila"
+            android:layout_toEndOf="@id/image_camila"
             style="@style/NunName" />
     </RelativeLayout>
 </LinearLayout>

@@ -60,4 +60,15 @@
     "Little is known of Camila however, she is a fierce fighter.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="which_nun_are_you">Which nun are you?</string>
+    <string name="name_ava">Ava</string>
+    <string name="name_mary">Shotgun Mary</string>
+    <string name="name_lilith">Lilith</string>
+    <string name="name_beatrice">Beatrice</string>
+    <string name="name_camila">Camila</string>
+    <string name="image_of_camila">Image of Camila</string>
+    <string name="image_of_beatrice">Image of Beatrice</string>
+    <string name="image_of_lilith">Image of Lilith</string>
+    <string name="image_of_mary">Image of Mary</string>
+    <string name="image_of_ava">Image of Ava</string>
 </resources>
