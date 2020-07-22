@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_NUN = "com.example.android.warriornun.MESSAGE";
@@ -20,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        ArrayList<Object> listOfNuns = new ArrayList<Object>();
+//
+//        listOfNuns.add("Sample");
+
     }
 
     public void selectAva(View view) {
