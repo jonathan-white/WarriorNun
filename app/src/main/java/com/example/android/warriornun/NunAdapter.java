@@ -40,6 +40,7 @@ public class NunAdapter extends ArrayAdapter {
         ImageView imageTextView = (ImageView) itemListView.findViewById(R.id.nun_image_text_view);
         imageTextView.setImageResource(currentNun.getThumbnail());
 
+
         return itemListView;
     }
 }

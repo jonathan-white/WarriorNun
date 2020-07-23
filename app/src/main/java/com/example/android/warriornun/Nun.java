@@ -1,16 +1,18 @@
 package com.example.android.warriornun;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
 public class Nun {
-    private String mName;
+    private int mName;
     private int mHeaderImage;
     private int mMainImage;
     private int mThumbnail;
-    private String mSummary;
+    private int mSummary;
 
-    public Nun(String name, int headerImage, int mainImage, int thumbnail, String summary) {
+    public Nun(int name, int headerImage, int mainImage, int thumbnail, int summary) {
         mName = name;
         mHeaderImage = headerImage;
         mMainImage = mainImage;
@@ -23,7 +25,7 @@ public class Nun {
      *
      * @return mName
      */
-    public String getName(){
+    public int getName(){
         return mName;
     }
 
@@ -59,7 +61,8 @@ public class Nun {
      *
      * @return mSummary
      */
-    public String getSummary(){
+    public int getSummary(){
         return mSummary;
     }
+
 }

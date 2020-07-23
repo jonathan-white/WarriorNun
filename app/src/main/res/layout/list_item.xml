@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nun_entry"
-    style="@style/NunButton" >
-    <ImageView
-        android:id="@+id/nun_image_text_view"
-        tools:src="@drawable/ava"
-        style="@style/NunImage" />
-    <TextView
-        android:id="@+id/nun_name_text_view"
-        tools:text="Ava"
-        android:layout_toEndOf="@id/nun_image_text_view"
-        style="@style/NunName" />
-</RelativeLayout>
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingRight="@dimen/standard_spacing"
+    android:paddingLeft="@dimen/standard_spacing" >
+    <RelativeLayout
+        android:id="@+id/nun_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/standard_spacing">
+        <ImageView
+            android:id="@+id/nun_image_text_view"
+            tools:src="@drawable/ava"
+            style="@style/NunImage" />
+        <TextView
+            android:id="@+id/nun_name_text_view"
+            tools:text="Ava"
+            android:layout_toEndOf="@id/nun_image_text_view"
+            style="@style/NunName" />
+    </RelativeLayout>
+
+</LinearLayout>
