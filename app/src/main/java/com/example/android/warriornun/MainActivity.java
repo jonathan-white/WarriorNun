@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ArrayList<Nun> listOfNuns = new ArrayList<Nun>();
+        final ArrayList<Nun> listOfNuns = new ArrayList<>();
 
         listOfNuns.add(new Nun(R.string.name_ava, R.drawable.ava2, R.drawable.warrior_nun_ava_s1_poster,
                 R.drawable.ava, R.string.ava_text));
@@ -36,26 +34,22 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.camila, R.string.camila_text));
 
         NunAdapter adapterForNuns = new NunAdapter(this, listOfNuns);
-        ListView listView = (ListView) findViewById(R.id.nun_list);
+        ListView listView = findViewById(R.id.nun_list);
         listView.setAdapter(adapterForNuns);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            // Get the clicked nun
+            Nun nun = listOfNuns.get(position);
+            Log.v("Selected Nun: ", "Selected Nun: " + nun);
 
-                // Get the clicked nun
-                Nun nun = listOfNuns.get(position);
-                Log.v("Selected Nun: ", "Selected Nun: " + nun);
+            //TODO: replace passing UI state data via Intents with ViewModel
 
-                //TODO: replace passing UI state data via Intents with ViewModel
-
-                //Setup an intent to move to the DisplaySelectedActivity
-                Intent intent = new Intent(MainActivity.this, DisplaySelectedActivity.class);
-                intent.putExtra(EXTRA_NUN_NAME, nun.getName());
-                intent.putExtra(EXTRA_NUN_HEADER, nun.getHeaderImage());
-                intent.putExtra(EXTRA_IMAGE, nun.getMainImage());
-                intent.putExtra(EXTRA_NUN_SUMMARY, nun.getSummary());
-                startActivity(intent);
-            }
+            //Setup an intent to move to the DisplaySelectedActivity
+            Intent intent = new Intent(MainActivity.this, DisplaySelectedActivity.class);
+            intent.putExtra(EXTRA_NUN_NAME, nun.getName());
+            intent.putExtra(EXTRA_NUN_HEADER, nun.getHeaderImage());
+            intent.putExtra(EXTRA_IMAGE, nun.getMainImage());
+            intent.putExtra(EXTRA_NUN_SUMMARY, nun.getSummary());
+            startActivity(intent);
         });
     }
 }

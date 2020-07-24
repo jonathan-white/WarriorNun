@@ -11,7 +11,6 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
 import android.widget.TextView;
 
 public class ScrollingActivity extends AppCompatActivity {
@@ -46,13 +45,9 @@ public class ScrollingActivity extends AppCompatActivity {
         content.setText(contentText);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, nameOfNun + " is away on an assignment at the moment.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view,
+                nameOfNun + " is away on an assignment at the moment.", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
 
     }
 }
