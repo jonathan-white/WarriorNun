@@ -65,4 +65,14 @@ public class Nun {
         return mSummary;
     }
 
+    @Override
+    public String toString() {
+        return "Nun{" +
+                "mName=" + mName +
+                ", mHeaderImage=" + mHeaderImage +
+                ", mMainImage=" + mMainImage +
+                ", mThumbnail=" + mThumbnail +
+                ", mSummary=" + mSummary +
+                '}';
+    }
 }

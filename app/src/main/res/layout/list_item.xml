@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/standard_spacing"
     android:paddingLeft="@dimen/standard_spacing" >
     <RelativeLayout
-        android:id="@+id/nun_entry"
+        android:id="@+id/nun_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/standard_spacing">

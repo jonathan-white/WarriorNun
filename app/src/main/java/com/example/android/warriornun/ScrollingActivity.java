@@ -22,21 +22,20 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
 
         Intent intent = getIntent();
-        String nun_title = intent.getStringExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL);
-        String nun_header = intent.getStringExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_HEADER);
-        String nun_summary = intent.getStringExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_SUMMARY);
+        int nun_title = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL,0);
+        int nun_header = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_HEADER,0);
+        int nun_summary = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_SUMMARY,0);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle(nun_title);
+        String titleText = getResources().getString(nun_title);
+        toolBarLayout.setTitle(titleText);
 
-        int imageResource = getResources().getIdentifier(nun_header, null, getPackageName());
-        Drawable res = getResources().getDrawable(imageResource);
+        Drawable res = getResources().getDrawable(nun_header);
         toolBarLayout.setBackground(res);
 
-        int textResource = getResources().getIdentifier(nun_summary, null, getPackageName());
-        String contentText = getResources().getString(textResource);
+        String contentText = getResources().getString(nun_summary);
         TextView content = findViewById(R.id.scrollable_content);
         content.setText(contentText);
 
