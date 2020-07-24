@@ -21,16 +21,22 @@ public class ScrollingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
+        //TODO: replace passing UI state data via Intents with ViewModel
+
+        // Pull in the Intent details received from the DisplaySelectedActivity
         Intent intent = getIntent();
-        int nun_title = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL,0);
+        int nunNameResourceId = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_TITLE,0);
         int nun_header = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_HEADER,0);
         int nun_summary = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_SUMMARY,0);
 
+        // Find the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
-        String titleText = getResources().getString(nun_title);
-        toolBarLayout.setTitle(titleText);
+        // Get the name of the nun
+        String nameOfNun = getResources().getString(nunNameResourceId);
+        // Set the toolbar title text to the nun's name
+        toolBarLayout.setTitle(nameOfNun);
 
         Drawable res = getResources().getDrawable(nun_header);
         toolBarLayout.setBackground(res);
@@ -43,7 +49,7 @@ public class ScrollingActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, nun_title + " is away on an assignment at the moment.", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, nameOfNun + " is away on an assignment at the moment.", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

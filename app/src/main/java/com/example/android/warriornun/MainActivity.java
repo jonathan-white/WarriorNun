@@ -24,11 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<Nun> listOfNuns = new ArrayList<Nun>();
 
-        listOfNuns.add(new Nun(R.string.name_ava, R.drawable.ava2, R.drawable.warrior_nun_ava_s1_poster,R.drawable.ava, R.string.ava_text));
-        listOfNuns.add(new Nun(R.string.name_mary, R.drawable.mary2, R.drawable.warrior_nun_mary_s1_poster,R.drawable.mary, R.string.mary_text));
-        listOfNuns.add(new Nun(R.string.name_lilith, R.drawable.lilith2, R.drawable.warrior_nun_lilith_s1_poster,R.drawable.lilith, R.string.lilith_text));
-        listOfNuns.add(new Nun(R.string.name_beatrice, R.drawable.beatrice2, R.drawable.warrior_nun_beatrice_s1_poster,R.drawable.beatrice, R.string.beatrice_text));
-        listOfNuns.add(new Nun(R.string.name_camila, R.drawable.camila2, R.drawable.warrior_nun_camila_s1_poster,R.drawable.camila, R.string.camila_text));
+        listOfNuns.add(new Nun(R.string.name_ava, R.drawable.ava2, R.drawable.warrior_nun_ava_s1_poster,
+                R.drawable.ava, R.string.ava_text));
+        listOfNuns.add(new Nun(R.string.name_mary, R.drawable.mary2,
+                R.drawable.warrior_nun_mary_s1_poster,R.drawable.mary, R.string.mary_text));
+        listOfNuns.add(new Nun(R.string.name_lilith, R.drawable.lilith2, R.drawable.warrior_nun_lilith_s1_poster,
+                R.drawable.lilith, R.string.lilith_text));
+        listOfNuns.add(new Nun(R.string.name_beatrice, R.drawable.beatrice2,
+                R.drawable.warrior_nun_beatrice_s1_poster,R.drawable.beatrice, R.string.beatrice_text));
+        listOfNuns.add(new Nun(R.string.name_camila, R.drawable.camila2, R.drawable.warrior_nun_camila_s1_poster,
+                R.drawable.camila, R.string.camila_text));
 
         NunAdapter adapterForNuns = new NunAdapter(this, listOfNuns);
         ListView listView = (ListView) findViewById(R.id.nun_list);
@@ -40,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 // Get the clicked nun
                 Nun nun = listOfNuns.get(position);
                 Log.v("Selected Nun: ", "Selected Nun: " + nun);
+
+                //TODO: replace passing UI state data via Intents with ViewModel
 
                 //Setup an intent to move to the DisplaySelectedActivity
                 Intent intent = new Intent(MainActivity.this, DisplaySelectedActivity.class);
