@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_NUN_NAME = "com.example.android.warriornun.NUN";
     public static final String EXTRA_NUN_HEADER = "com.example.android.warriornun.HEADER";
-    public static final String EXTRA_NUN_SUMMARY = "com.example.android.warriornun.SUMMARY";
-    public static final String EXTRA_IMAGE = "com.example.android.warriornun.IMAGE";
+    public static final String EXTRA_NUN_IMAGE = "com.example.android.warriornun.IMAGE";
+    public static final String EXTRA_NUN_BIO = "com.example.android.warriornun.SUMMARY";
 
     private NunViewModel model;
 
@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
             model.select(nun);
 
-            //Setup an intent to move to the DisplaySelectedActivity
-            Intent intent = new Intent(MainActivity.this, DisplaySelectedActivity.class);
+            //Setup an intent to move to the NunBioActivity
+            Intent intent = new Intent(MainActivity.this, NunBioActivity.class);
             intent.putExtra(EXTRA_NUN_NAME, nun.getName());
             intent.putExtra(EXTRA_NUN_HEADER, nun.getHeaderImage());
-            intent.putExtra(EXTRA_IMAGE, nun.getMainImage());
-            intent.putExtra(EXTRA_NUN_SUMMARY, nun.getSummary());
+            intent.putExtra(EXTRA_NUN_IMAGE, nun.getMainImage());
+            intent.putExtra(EXTRA_NUN_BIO, nun.getSummary());
             startActivity(intent);
         });
     }

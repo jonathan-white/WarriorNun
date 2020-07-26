@@ -10,11 +10,14 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class NunBioActivity extends AppCompatActivity {
     private NunViewModel model;
 
     @Override
@@ -25,11 +28,12 @@ public class ScrollingActivity extends AppCompatActivity {
         //connect UI controller to ViewModel
         model = new ViewModelProvider(this).get(NunViewModel.class);
 
-        // Pull in the Intent details received from the DisplaySelectedActivity
+        // Pull in the Intent details received from the MainActivity
         Intent intent = getIntent();
-        int nunNameResourceId = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_TITLE,0);
-        int nun_header = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_HEADER,0);
-        int nun_summary = intent.getIntExtra(DisplaySelectedActivity.EXTRA_NUN_DETAIL_SUMMARY,0);
+        int nunNameResourceId = intent.getIntExtra(MainActivity.EXTRA_NUN_NAME,0);
+        int nun_header = intent.getIntExtra(MainActivity.EXTRA_NUN_HEADER,0);
+        int nun_summary = intent.getIntExtra(MainActivity.EXTRA_NUN_BIO, 0);
+        int nun_image = intent.getIntExtra(MainActivity.EXTRA_NUN_IMAGE, 0);
 
         // Find the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -40,12 +44,16 @@ public class ScrollingActivity extends AppCompatActivity {
         // Set the toolbar title text to the nun's name
         toolBarLayout.setTitle(nameOfNun);
 
-        Drawable res = getResources().getDrawable(nun_header);
-        toolBarLayout.setBackground(res);
+        Drawable nunHeader = getResources().getDrawable(nun_header);
+        toolBarLayout.setBackground(nunHeader);
 
-        String contentText = getResources().getString(nun_summary);
-        TextView content = findViewById(R.id.scrollable_content);
-        content.setText(contentText);
+        String nunBio = getResources().getString(nun_summary);
+        TextView content = findViewById(R.id.nun_bio);
+        content.setText(nunBio);
+
+        NestedScrollView scrollView = findViewById(R.id.nun_image);
+        Drawable nunImage = getResources().getDrawable(nun_image);
+        scrollView.setBackground(nunImage);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> Snackbar.make(view,

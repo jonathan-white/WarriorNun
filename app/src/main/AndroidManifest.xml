@@ -16,17 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplaySelectedActivity"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".NunBioActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/Theme.WarriorNun.NoActionBar"
-            android:parentActivityName=".DisplaySelectedActivity"
+            android:parentActivityName=".MainActivity"
             >
         </activity>
     </application>
