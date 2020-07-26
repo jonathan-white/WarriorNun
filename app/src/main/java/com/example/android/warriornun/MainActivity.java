@@ -1,6 +1,8 @@
 package com.example.android.warriornun;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,10 +17,15 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_NUN_SUMMARY = "com.example.android.warriornun.SUMMARY";
     public static final String EXTRA_IMAGE = "com.example.android.warriornun.IMAGE";
 
+    private SharedViewModel model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //TODO: setup ViewModel
+        model = new ViewModelProvider(this).get(SharedViewModel.class);
 
         final ArrayList<Nun> listOfNuns = new ArrayList<>();
 
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             Nun nun = listOfNuns.get(position);
             Log.v("Selected Nun: ", "Selected Nun: " + nun);
 
-            //TODO: replace passing UI state data via Intents with ViewModel
+            model.select(nun);
 
             //Setup an intent to move to the DisplaySelectedActivity
             Intent intent = new Intent(MainActivity.this, DisplaySelectedActivity.class);

@@ -20,7 +20,7 @@ public class ScrollingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
-        //TODO: replace passing UI state data via Intents with ViewModel
+        //TODO: pass UI state data with ViewModel
 
         // Pull in the Intent details received from the DisplaySelectedActivity
         Intent intent = getIntent();
