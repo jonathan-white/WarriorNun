@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+
 public class SharedViewModel extends ViewModel {
     private MutableLiveData<Nun> selected = new MutableLiveData<Nun>();
 
@@ -11,7 +12,9 @@ public class SharedViewModel extends ViewModel {
         selected.setValue(nun);
     }
 
-    public LiveData<Nun> getSelected() {
-        return selected;
-    }
+    /**
+     * Use this to return the selected nun.
+     * @return the selected Nun
+     */
+    public LiveData<Nun> getSelected() { return selected; }
 }

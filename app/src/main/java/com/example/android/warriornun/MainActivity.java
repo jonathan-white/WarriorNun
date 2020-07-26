@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO: setup ViewModel
+        //connect UI controller to ViewModel
         model = new ViewModelProvider(this).get(SharedViewModel.class);
 
         final ArrayList<Nun> listOfNuns = new ArrayList<>();
