@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 public class DisplaySelectedActivity extends AppCompatActivity {
     public static final String EXTRA_NUN_TITLE = "com.example.android.warriornun.TITLE";
@@ -15,13 +16,17 @@ public class DisplaySelectedActivity extends AppCompatActivity {
     private int nun_name;
     private int nun_header;
     private int nun_summary;
+    private NunViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_selected);
 
-        //TODO: pass UI state data with ViewModel
+        //connect UI controller to ViewModel
+        model = new ViewModelProvider(this).get(NunViewModel.class);
+
+
         Intent intent = getIntent();
         nun_name = intent.getIntExtra(MainActivity.EXTRA_NUN_NAME, 0);
         nun_header = intent.getIntExtra(MainActivity.EXTRA_NUN_HEADER, 0);

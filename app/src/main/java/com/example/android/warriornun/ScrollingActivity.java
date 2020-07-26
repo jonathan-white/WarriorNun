@@ -10,17 +10,20 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.widget.TextView;
 
 public class ScrollingActivity extends AppCompatActivity {
+    private NunViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
-        //TODO: pass UI state data with ViewModel
+        //connect UI controller to ViewModel
+        model = new ViewModelProvider(this).get(NunViewModel.class);
 
         // Pull in the Intent details received from the DisplaySelectedActivity
         Intent intent = getIntent();

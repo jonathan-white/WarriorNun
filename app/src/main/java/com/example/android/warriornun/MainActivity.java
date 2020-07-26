@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_NUN_SUMMARY = "com.example.android.warriornun.SUMMARY";
     public static final String EXTRA_IMAGE = "com.example.android.warriornun.IMAGE";
 
-    private SharedViewModel model;
+    private NunViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //connect UI controller to ViewModel
-        model = new ViewModelProvider(this).get(SharedViewModel.class);
+        model = new ViewModelProvider(this).get(NunViewModel.class);
 
         final ArrayList<Nun> listOfNuns = new ArrayList<>();
 
