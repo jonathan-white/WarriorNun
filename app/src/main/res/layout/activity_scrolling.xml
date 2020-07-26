@@ -22,6 +22,7 @@
             android:background="@drawable/ava2"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:collapsedTitleTextAppearance="@color/white"
             app:toolbarId="@+id/toolbar">
 
             <androidx.appcompat.widget.Toolbar
@@ -41,9 +42,9 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email"
+        app:srcCompat="@android:drawable/ic_menu_add"
         android:contentDescription="@string/send_email" />
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/nun_bio" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
