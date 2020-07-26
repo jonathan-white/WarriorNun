@@ -62,10 +62,15 @@
     <string name="action_settings">Settings</string>
     <string name="which_nun_are_you">Which nun are you?</string>
     <string name="name_ava">Ava</string>
-    <string name="name_mary">Shotgun Mary</string>
+    <string name="name_mary">Mary</string>
     <string name="name_lilith">Lilith</string>
     <string name="name_beatrice">Beatrice</string>
     <string name="name_camila">Camila</string>
+    <string name="subtitle_ava">Chosen Warrior Nun</string>
+    <string name="subtitle_mary">Loyal Protector</string>
+    <string name="subtitle_lilith">Jealous Sister Nun</string>
+    <string name="subtitle_beatrice">Paragon Sister Nun</string>
+    <string name="subtitle_camila">Studious Sister Nun</string>
     <string name="image_of_camila">Image of Camila</string>
     <string name="image_of_beatrice">Image of Beatrice</string>
     <string name="image_of_lilith">Image of Lilith</string>

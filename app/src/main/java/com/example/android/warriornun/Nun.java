@@ -7,13 +7,15 @@ import android.view.View;
 
 public class Nun {
     private int mName;
+    private int mSubtitle;
     private int mHeaderImage;
     private int mMainImage;
     private int mThumbnail;
     private int mSummary;
 
-    public Nun(int name, int headerImage, int mainImage, int thumbnail, int summary) {
+    public Nun(int name, int subtitle, int headerImage, int mainImage, int thumbnail, int summary) {
         mName = name;
+        mSubtitle = subtitle;
         mHeaderImage = headerImage;
         mMainImage = mainImage;
         mThumbnail = thumbnail;
@@ -27,6 +29,15 @@ public class Nun {
      */
     public int getName(){
         return mName;
+    }
+
+    /**
+     *  Returns the nun's tagline/subtitle
+     *
+     * @return mSubtitle
+     */
+    public int getSubtitle(){
+        return mSubtitle;
     }
 
     /**

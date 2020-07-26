@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
+    android:layout_height="100dp"
     android:layout_width="match_parent"
-    android:paddingRight="@dimen/standard_spacing"
-    android:paddingLeft="@dimen/standard_spacing" >
-    <RelativeLayout
+    android:background="@color/purple_500">
+
+    <ImageView
+        android:id="@+id/nun_image"
+        android:layout_width="83dp"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_shadow_start_color"
+        android:scaleType="fitStart"
+        tools:src="@drawable/ava" />
+
+    <LinearLayout
         android:id="@+id/nun_container"
+        android:layout_toRightOf="@+id/nun_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/standard_spacing">
-        <ImageView
-            android:id="@+id/nun_image_text_view"
-            tools:src="@drawable/ava"
-            style="@style/NunImage" />
-        <TextView
-            android:id="@+id/nun_name_text_view"
-            tools:text="Ava"
-            android:layout_toEndOf="@id/nun_image_text_view"
-            style="@style/NunName" />
-    </RelativeLayout>
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/nun_name"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="40sp"
+            android:textColor="@color/purple_A100"
+            tools:text="Ava" />
+
+        <TextView
+            android:id="@+id/nun_subtitle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            tools:text="Chosen Warrior Nun" />
+    </LinearLayout>
+
+</RelativeLayout>

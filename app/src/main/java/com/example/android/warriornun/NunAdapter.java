@@ -33,11 +33,16 @@ public class NunAdapter extends ArrayAdapter {
         Nun currentNun = (Nun) getItem(position);
 
         //Obtain the ID of the TextView that will be used display the nun's name and set the name
-        TextView nameTextView = (TextView) itemListView.findViewById(R.id.nun_name_text_view);
+        TextView nameTextView = (TextView) itemListView.findViewById(R.id.nun_name);
         nameTextView.setText(currentNun.getName());
 
+
+        //Obtain the ID of the TextView that will be used display the nun's subtitle and set the subtitle
+        TextView subtitleTextView = (TextView) itemListView.findViewById(R.id.nun_subtitle);
+        subtitleTextView.setText(currentNun.getSubtitle());
+
         //Obtain the ID of the ImageView that will be used display the nun's avatar and set the image
-        ImageView imageTextView = (ImageView) itemListView.findViewById(R.id.nun_image_text_view);
+        ImageView imageTextView = (ImageView) itemListView.findViewById(R.id.nun_image);
         imageTextView.setImageResource(currentNun.getThumbnail());
 
         return itemListView;
