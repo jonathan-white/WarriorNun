@@ -12,22 +12,15 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.NestedScrollView;
-import androidx.lifecycle.ViewModelProvider;
 
-import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class NunBioActivity extends AppCompatActivity {
-    private NunViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
-
-        //connect UI controller to ViewModel
-        model = new ViewModelProvider(this).get(NunViewModel.class);
 
         // Pull in the Intent details received from the MainActivity
         Intent intent = getIntent();
@@ -42,8 +35,8 @@ public class NunBioActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         // Get the name of the nun
         String nameOfNun = getResources().getString(nunNameResourceId);
+
         // Set the toolbar title text to the nun's name
-//        toolBarLayout.setTitle(nameOfNun);
         AppBarLayout appBarLayout = findViewById(R.id.app_bar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = true;
